@@ -48,11 +48,12 @@
 <ul>                              <!--ul为无序列表   ol为有序列表-->
   <li>小学</li>
     <ol>
-      <li>一年级</li>
+      <li>一年级
         <ol>
           <li>上学期</li>
           <li>下学期</li>
         </ol>
+      </li>
       <li>二年级</li>
       <li>三年级</li>
     </ol>
@@ -73,7 +74,82 @@
 </dl>
 <hr>
 <h3>Google搜索</h3>
+<form action="https://www.google.com/search?" target="_blank">
+  <input type="type" name="q">
+  <button>谷歌一下</button>
+</form>
 <hr>
-
+<p>个人信息调查表</p>
+<form action="#">
+  <dl>
+    <dt>性别
+      <dd>
+        <label>
+          <input type="radio" value="male" name="gender">男
+        </label>
+        <label>
+          <input type="radio" value="famalr" name="gender">女
+        </label>
+      </dd>
+    </dt>
+    <dt>年龄
+      <dd>
+        <select name="age">
+          <option value="" hidden>请选择</option>
+          <optgroup label="少年">
+            <option value="">一到六岁</option>
+            <option value="">六到十二岁</option>
+          </optgroup>
+          <optgroup label="青年">
+            <option value="">十三到十五岁</option>
+            <option value="">十五到十八岁</option>
+          </optgroup>
+          <optgroup label="壮年">
+            <option value="">十八到十九岁</option>
+            <option value="">十九到二十岁</option>
+          </optgroup>
+        </select>
+      </dd>
+    </dt>
+    <dt>生日
+      <dd>
+        <input type="date">
+      </dd>
+    </dt>
+    <dt>生辰
+      <dd>
+        <input type="time">
+      </dd>
+    </dt>
+    <dt>照片
+      <dd>
+        <label>
+          <input type="file"hidden>上传照片
+        </label>
+      </dd>
+    </dt>
+    <dt>肤色
+      <dd>
+        <input type="color">
+      </dd>
+    </dt>
+    <dt>自我介绍
+      <dd>
+        <textarea name="introduce" cols="30" rows="10">&lt;/textarea>
+        </textarea>
+      </dd>
+    </dt>
+  </dl>
+  <fieldset>
+    <legend>此段禁用</legend>
+    <input type="text" disabled>
+    <input type="text" disabled>
+    <input type="text" disabled>
+    <input type="text" disabled>
+  </fieldset>
+  <br>
+  <button>提交</button>
+  <button type="reset">重置所有</button>
+</form>
   </body>
 </html>
