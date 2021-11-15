@@ -1,0 +1,60 @@
+h1{
+  text-shadow:
+  0.5px 0.5px #333,
+  1px 1px 0 #333,
+  2px 2px 0 #333,
+  3px 3px 0 #333,
+  4px 4px 0  #333;
+}
+h1 > span{
+  color: blue;
+}
+h3{
+  font-size: 100px;
+  text-shadow:
+  0px 0px 1px red,
+  0px 0px 1px red,
+  0px 0px 1px red,
+  0px 0px 1px red,
+  0px 0px 1px red,
+  0px 0px 1px red,
+  0px 0px 1px red;
+  color:white;
+/*是字体颜色和背景颜色一样
+使用text-shadow进行字体描边达成镂空字体*/
+}
+.b{
+  font-size: 25px;
+}
+input{
+  font: inherit;   /*继承父元素字体大小*/
+}
+h2{
+  font-family:MV Boli,幼圆;
+}
+.a{
+  text-align:right;
+  font-size: 25px;
+}
+.a{
+  font-style: italic;
+}
+.a > b{
+   color: red;
+   text-decoration:underline;
+}
+.a > span{
+  text-decoration: line-through underline;
+}
+.d{
+  font-family: monospace;
+
+  text-align: justify; /*左右对齐*/
+  text-indent:2em;  /*文本开头缩进*/
+  letter-spacing:5px;  /*文本间距*/
+  word-spacing: 10px;
+  line-height: 2;
+}
+.c span{
+  font-size: 1.5em;
+}
