@@ -1,0 +1,57 @@
+*{
+  margin: 0 0 0 0 ;
+}
+header{
+  background-color: rgb(31, 24, 24);
+  margin-bottom: 20px;
+}
+header > nav{
+  margin: auto;
+  height: 20px;
+  color: white;
+  width: 600px;
+}
+p{
+  width: 600px;
+  margin: auto;
+}
+.tabulation{
+  width: 600px;
+  margin: auto;
+}
+.tabulation > div >span{
+  display: inline-block;
+  border: 3px solid #000;
+  width: 174px;
+  height: 34px;
+  background-color: green;
+  text-align:center;
+  font-size: 20px;
+}
+.tabulation > div > span:hover{
+  background-color: red;
+}
+.tabulation > div > span:nth-child(-n+2){
+  margin-right: 30px;
+}
+.tabulation > div{
+  margin-top: 0;
+  font-size:0 ;
+  margin-top: 15px;
+}
+.table{
+  width: 600px;
+  margin: auto;
+}
+.table > ul{
+  list-style: none;
+  padding: 0 0;
+}
+.table > ul >li:nth-child(-n+4){
+  border-bottom: solid 1px red;
+}
+footer{
+  background-color: coral;
+  text-align:center;
+  margin-top: 20px;
+}
