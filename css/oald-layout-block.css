@@ -1,0 +1,123 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-size: 0;
+  height: 100%;
+}
+.wordList {                      /*侧边栏整体*/
+  border-right: 1px solid #000;
+  width: 200px;
+  height: 100vh;
+  display: inline-block;
+  vertical-align: top;
+
+}
+.wordList > h1{
+  text-align: right;
+  font-size: 24px;
+  line-height: 72px;
+  margin: 0 12px;
+}
+.search > input{
+  height: 25px;
+  width: 150px;
+  border-radius: 15px 0 0 15px;
+  font-size: 15px;
+}
+.search > button{
+  width: 35px;
+  height: 25px;
+  border-radius: 0 15px 15px 0;
+  font-size: 10px;
+  margin-left: 3px;
+  vertical-align: top;
+}
+.search{
+  margin: 4px;
+  text-align: center;
+  height: 27px;
+}
+.wordList > .table{
+  height: calc(100vh - 110px);
+  font-size: 20px;
+}
+.wordList ul{
+
+  overflow: auto;
+  height: 100%;
+}
+.wordList li{
+  list-style: none;
+  padding-left: 20px;
+}
+
+/*上面为左侧box*/
+.middle{
+  width: 1320px;
+  height: 100vh;
+  display: inline-block;
+}
+
+.world{
+  width: 100%;
+  height: 70px;
+  background-color: #eee;
+  margin: 0;
+
+  border-bottom:1px solid #000 ;
+}
+.world > h2{
+  margin: 0 24px;
+  line-height: 70px;
+  font-size: 24px;
+}
+
+.main{
+  font-size: medium;
+  height: calc(100% - 70px);
+  background-color:rgb(224, 167, 167) ;
+  padding: 16px ;
+}
+.main > p{
+  margin:16px 0;
+}
+.main > ol{
+  margin: 16px 0;
+  padding-left:40px ;
+
+}
+
+/*上方为中间box*/
+
+
+.a{
+  width: 200px;
+  height: 100vh;
+  background-color: #eee;
+  font-size:medium ;
+  display: inline-block;
+  vertical-align: top;
+  border-left:1px solid #000 ;
+}
+.a > h2{
+  text-align: right;
+  line-height: 70px;
+  margin: 0 12px;
+}
+.b{
+  width: calc(100% - 200px - 1320px - 200px);
+  height: 100vh;
+  background-color: #aaa;
+  font-size:medium ;
+  display: inline-block;
+  vertical-align: top;
+  border-left:1px solid #000 ;
+}
+.b > h2{
+  text-align: right;
+  line-height: 70px;
+  margin: 0 12px;
+}

@@ -1,0 +1,35 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-size:0;
+  width: 100%;
+}
+nav{
+  height: 100px;
+  width: 100%;
+  background-color: #87ceeb;
+}
+.table{
+  width: 200px;
+  height: calc(100vh - 100px);
+  border-right:1px solid red;
+  display: inline-block;
+  overflow:auto ;
+  font-size: 20px;
+  vertical-align:top;
+  background-color:#eee;
+}
+.table > ul{
+  margin: 16px 0;
+}
+p{
+  font-size: 15px;
+  width: calc(100% - 200px);
+  display: inline-block;
+  vertical-align:top;
+  height: calc(100vh - 100px);
+  background-color:red ;
+  overflow: auto;
+}
