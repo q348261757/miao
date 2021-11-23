@@ -1,0 +1,37 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  width: 100%;
+  font-size: 0;
+  position: relative;
+}
+nav{
+  height: 100px;
+  width: 100%;
+  background-color:skyblue ;
+  box-sizing: border-box;
+}
+
+.sidebar{
+  width: 200px;
+  background-color: rgb(210, 180, 140);
+  height: calc(100vh - 100px);
+  overflow: auto;
+}
+.sidebar > ul{
+  height: 100%;
+  font-size: medium;
+  padding-left:40px ;
+  margin-top: 16px;
+}
+.main{
+  font-size: medium;
+  background-color: yellow;
+  width: calc(100% - 200px);
+  position:absolute;
+  left: 200px;
+  top: 100px;
+  height:calc(100vh - 100px);
+}

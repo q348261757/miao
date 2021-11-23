@@ -1,0 +1,120 @@
+*{
+  margin:0 ;
+  padding: 0;
+}
+body{
+  font-size: 0;
+  width: 100%;
+  position: relative;
+  height: 100%;
+}
+.table{
+  width: 200px;
+  box-sizing: border-box;
+  border-right: 1px solid;
+  background-color: rgb(234, 238, 243);
+  height: 100vh;
+
+}
+.table > h1{
+  font-size: 24px;
+  margin:0 12px;
+  line-height: 72px;
+  text-align: right;
+}
+.table > .pushbutton{
+  text-align: center;
+  margin: 4px;
+
+}
+.table > .pushbutton  > input{
+  border-radius: 15px 0 0 15px;
+  width: 150px;
+  height: 25px;
+  margin: 0 2px;
+  box-sizing: border-box;
+}
+.table > .pushbutton  > button{
+  width: 35px;
+  height: 25px;
+  padding: 1px 6px;
+  border: 2px solid;
+  border-radius: 0px 15px 15px 0;
+  vertical-align: top;
+  box-sizing: border-box;
+}
+.table > ul{
+  font-size: medium;
+  margin-top:3px ;
+  list-style: none;
+  padding-left: 20px;
+  height: calc(100vh - 110px);
+  overflow: auto;
+}
+.headline{
+  font-size: 24px;
+  width: calc(100% - 600px);
+  height: 72px;
+  border-bottom: 1px solid;
+  background-color: #eee;
+  position: absolute;
+  left:200px;
+  top: 0;
+  box-sizing: border-box;
+}
+.headline > h2{
+  margin: 0 24px;
+  line-height: 72px;
+  font-size: 24px;
+}
+
+
+
+
+.main{
+  font-size: 24px;
+  width: calc(100% - 600px);
+  height: calc(100vh - 72px);
+  position: absolute;
+  left:200px;
+  top: 72px;
+  background-color: #aaa;
+  padding: 16px;
+  box-sizing: border-box;
+}
+.main > p{
+  margin: 16px 0 ;
+}
+.main > ol{
+  margin: 16px 0;
+  padding-left:40px ;
+}
+.Vocabulary{
+  position: absolute;
+  top: 0;
+  right: 200px;
+  width: 200px;
+  height: 100%;
+  border-right:1px solid ;
+  box-sizing: border-box;
+}
+.Vocabulary > h2{
+  font-size: 24px;
+  margin: 0 12px;
+  line-height: 3;
+  text-align: right;
+}
+.History{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 100%;
+  box-sizing: border-box;
+}
+.History > h2{
+  font-size: 24px;
+  margin: 0 12px;
+  line-height: 3;
+  text-align: right;
+}
