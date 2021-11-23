@@ -1,0 +1,29 @@
+body{
+  position: relative;
+}
+.dolphin{
+  width: 700px;
+  height: 700px;
+  border: 1px solid;
+  position: absolute;
+  top: 50px;
+  left: 100px;
+}
+.dolphin > img{
+  position: absolute;
+  left: 5px;
+  top: 120px;
+}
+.nebula{
+  position: absolute;
+  top: 1000px;
+  left: 100px;
+  width: 900px;
+  height: 900px;
+  border: 1px solid;
+}
+.nebula >img{
+  position: absolute;
+  left: 125px;
+  top: 16px;
+}

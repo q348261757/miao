@@ -1,0 +1,13 @@
+.box{
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  background-image: url(../img/web_heart_animation.png);
+  background-position: 0 0;
+}
+.box:hover{
+  background-image: url(../img/web_heart_animation.png);
+  background-position: -2900px 0;
+  transition:2s steps(29, start);
+  /*transition:2s steps(29, end);*/
+}
