@@ -1,0 +1,38 @@
+.box{
+  width: 100px;
+  height: 52px;
+  border: 1px solid rgb(205, 205, 205) ;
+  border-radius: 25px;
+  background-color: white;
+  box-sizing: border-box;
+  box-shadow:inset  0 0 2px rgb(205, 205, 205) ;
+}
+.circle{
+  width: 48px;
+  height: 48px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background-color: #fff;
+  margin:1px 0px 1px 1px;
+  box-shadow:0 0 10px rgb(205, 205, 205) ;
+}
+input:checked + div{
+  background-color: rgb(48, 234, 75);
+  transition: 1s;
+}
+input:checked + div div{
+  margin-left: 50px;
+  margin-top: 1px;
+  margin-bottom:1px ;
+  transition: 1s;
+}
+input:not(:checked) + div{
+  background-color: white;
+  transition: 1s;
+}
+input:not(:checked) + div div{
+  margin-left: 1px;
+  margin-top: 1px;
+  margin-bottom:1px ;
+  transition: 1s;
+}
