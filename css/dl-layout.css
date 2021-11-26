@@ -1,0 +1,48 @@
+dt , dd{
+  border: 1px solid;
+}
+
+.playactor dl{
+  float: left;
+}
+.playactor dt{
+  float: left;
+}
+.playactor dd{
+  float: left;
+}
+
+
+span{
+  display: block;
+  clear: both;
+}
+
+
+dd{
+  margin: 0;
+}
+body > dl > dt{
+  display: inline-block;
+  vertical-align: top;
+}
+body > dl .one{
+  display: inline-block;
+  width: 500px;
+
+}
+body > dl .one > dd{
+  display: inline-block;
+}
+
+
+.two{
+  position: relative;
+}
+.two > dt{
+  position: relative;
+}
+.two > dd{
+  display: inline-block;
+}
+

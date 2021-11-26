@@ -1,0 +1,25 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.aa{
+  width: 100%;
+  height: 100px;
+  background-color: rgb(135,206,235);
+}
+.bb{
+  width: 200px;
+  height: calc(100vh - 100px);
+  float: left;
+  background-color: chocolate;
+  overflow: auto;
+}
+.bb > ul{
+  margin: 10px 0 0 40px;
+}
+.cc{
+  width: calc(100% - 200px);
+  height: calc(100vh - 100px);
+  float: left;
+  background-color: crimson;
+}

@@ -1,0 +1,23 @@
+.nine{
+  float: left;
+  width:170px;
+
+}
+.nine > div{
+width:50px;
+height:50px;
+border: 5px solid;
+float: left;
+margin-left:-5px;
+margin-top:-5px;
+text-align:center;
+}
+.nine > div:hover{
+border-color: yellow;
+ position: relative;
+}
+p{
+ display: inline;
+ line-height: 50px;
+
+}

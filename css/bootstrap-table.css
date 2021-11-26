@@ -1,0 +1,21 @@
+{
+  margin: 0;
+  padding: 0;
+}
+.table{
+  width: 100%;
+  text-align: left;
+  border-collapse:collapse;
+}
+.table > tbody > tr{
+  border-bottom: 1px rgb(226, 226, 230) solid;
+}
+.table > thead > tr{
+  border-bottom: 2px rgb(0, 0, 0) solid;
+}
+table th,table td{
+  padding: 8px;
+}
+.table-striped tbody tr:nth-child(2n+1){
+  background-color: rgb(242, 242, 242);
+}
