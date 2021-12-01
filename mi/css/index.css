@@ -1,0 +1,220 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+nav{                                        /*设置顶部导航总体样式*/
+  height: 40px;
+  background-color: #333;
+  position: relative;
+  z-index: 100;
+}
+.top-nav{                            /*设置导航栏位置*/
+  width: 1226px;
+  height: 100%;
+  margin: auto;
+}
+.topbar-nav{                            /*商场跳样式*/
+  line-height: 40px;
+  font-size: 0;
+  display: inline-block;
+}
+.topbar-nav > li{
+  display: inline-block;
+  list-style: none;
+  color: rgb(176,176,176);
+  height: 100%;
+  text-align: center;
+  font-size:12px ;
+  position: relative;
+}
+.top-nav span{                       /*导航栏中间隔条样式*/
+  color: rgb(66, 66, 66);
+  font-size: 8px;
+  margin: 0 0.3em;
+}
+.shopping-cart{                         /*购物车样式*/
+  float: right;
+  width: 120px;
+  height: 100%;
+  background-color: rgb(66, 66, 66);
+  text-align: center;
+  margin-left: 15px;
+  color: rgb(176,176,176);
+  font-size:12px ;
+  line-height: 40px ;
+  position: relative;
+}
+.info{                              /*登录条样式*/
+  float: right;
+  height: 100%;
+  font-size: 0;
+}
+.info > ul{
+  list-style: none;
+  height: 100%;
+}
+.info > ul > li{
+  display: inline-block;
+  line-height: 40px;
+  color: rgb(176,176,176);
+  font-size:12px ;
+  position: relative;
+}
+nav li:hover{                 /*导航栏鼠标悬浮字体变色*/
+  color: white;
+}
+ .QR-Code::before{                    /*设置下载app选项下的二维码*/
+  content: "";                            /*画的小三角*/
+   border-bottom: 8px solid white;
+   border-left: 8px solid #333;
+   border-right: 8px solid #333;
+   height: 0px;
+   position: absolute;
+   top:32px;
+   left: calc(50% - 8px);
+   font-size: 0;
+   display: none;
+ }
+ .QR-Code > div{                                /*二维码*/
+   position: absolute;
+   left: calc(50% - 62px);
+   color: rgb(51, 51, 51);
+   text-align: center;
+   box-shadow: 5px 5px 5px rgb(218, 218, 218),-5px 0 5px rgb(218, 218, 218);
+   overflow: hidden;                          /*触发bfc使其中元素不会超出*/
+   height: 0;
+   transition: height 0.3s;
+  }
+  .QR-Code > div{
+    line-height: 1;
+    font-size: 14px;
+  }
+ .QR-Code > div >img{                           /*设置鼠标悬浮的时候出现*/
+   width: 90px;
+   margin: 90px;
+   margin: 18px 17px 12px 17px;
+ }
+ .QR-Code:HOVER > div{                      /*二维码出现的样式*/
+  height: 150PX;
+  transition: height 0.3s;
+ }
+
+ .basket{                                 /*购物车车筐样式*/
+   height: 0px;
+   width: 316px;
+   line-height: 100px;
+   overflow: hidden;
+   color: #333;
+   position: absolute;
+   left: calc(120px - 316px );
+   top: 40px;
+   box-shadow: 5px 5px 5px rgb(218, 218, 218),-5px 0 5px rgb(218, 218, 218);
+   transition: height 0.3s;
+  }
+ .shopping-cart:hover  .basket{             /*购物车悬浮出现购物筐*/
+   height: 100px;
+   transition: height 0.3s;
+ }
+
+/*``````````````````````````````````````````````````````````````````````*/
+
+
+
+ .hearder-nav{                            /*头部导航搜索栏大小样式*/
+    width: 100%;
+    height: 100px;
+    z-index: 50;
+ }
+ .hearder-nav > .container{
+   height: 100%;
+   width: 1226px;
+   margin: auto;
+ }
+
+.logo > a > img{              /*左上角logo样式*/
+   width: 56px;
+   height: 56px;
+ }
+ /*.container{
+   overflow: hidden;
+ }*/
+ .logo{
+   margin-top: 22px;
+   width: 56px;
+   height: 56px;
+   float: left;
+ }
+.logo:hover > a >img{       /*鼠标点击时样式*/
+  margin-top: 3px;
+  margin-left:3px ;
+  width: 50px;
+  height: 50px;
+}
+
+
+.merchandise-nav{            /*手机导航栏*/
+  width: 850px;
+  float: left;
+  font-size: 0;
+}
+.merchandise-nav > ul{
+  float: left;
+  list-style: none;
+  font-size:16px ;
+  height: 88px;
+  padding-top:12px ;
+  padding-left: 30px;
+  margin-left: 142px;
+}
+.merchandise-nav > ul >li{
+  float: left;
+  padding: 26px 10px 41px 10px;
+}
+
+.reveal{                              /*手机产品下拉展示*/
+  position: absolute;
+  top: 140px;
+  left: 0px;
+  width: 100vw;
+  height: 0px;
+  transition: height 0.3s;
+  text-align: center;
+  overflow: hidden;
+}
+.merchandise-nav  li:hover{
+  color: rgb(255,103,0);
+}
+.merchandise-nav  li:hover > .reveal{                 /*设置悬浮展示*/
+  transition: height 0.3s;
+  height: 230px;
+  border-top: solid 1px rgb(224, 224, 224);
+  box-shadow: 5px 5px 5px rgb(218, 218, 218);
+}
+.reveal > .MIphotograph{                            /*设置下拉子菜单中的样式*/
+  display: inline-flex;
+  width: 1226px;
+  font-size: 12px;
+}
+.reveal > .MIphotograph > div > img{            /*设置内容的样式*/
+  width: 160px;
+  height: 110px;
+  padding-top: 35px;
+}
+.reveal > .MIphotograph > div{
+  width: 204px;
+  height: 201px;
+  text-align: center;
+  overflow: hidden;
+}
+.reveal > .MIphotograph > div >p {
+  color: #333;
+  margin-top: 10px;
+}
+.reveal > .MIphotograph > span{
+  display: block;
+  width: 0;
+  height: 100px;
+  border-right: 1px solid rgb(224, 224, 224) ;
+  margin-top: 35px;
+}
