@@ -1,0 +1,480 @@
+<script type="xx" id="ch0103/01">
+  var a = Number(prompt('a'))
+  var b = Number(prompt('b'))
+  console.log(a + b)
+</script>
+
+<script type="xx" id="ch0103/02">
+  var a = Number(prompt('a'))
+  var b = Number(prompt('b'))
+  var c = Number(prompt('c'))
+  console.log((a + b) * c)
+</script>
+
+<script type="xx" id="ch0103/03">
+  var a = Number(prompt('a'))
+  var b = Number(prompt('b'))
+  var c = Number(prompt('c'))
+  console.log((a + b) / c)
+</script>
+
+<script type="xx" id="ch0103/04">
+  var a = Number(prompt('a'))
+  var b = Number(prompt('b'))
+  var c = (a / b).toFixed(0)
+  console.log(c)
+  console.log(a % b)
+</script>
+
+<script type="xx" id="ch0103/05">
+  var a = Number(prompt('a'))
+  var b = Number(prompt('b'))
+  var c = (a / b).toFixed(9)
+  console.log(c)
+</script>
+
+<script type="xx" id="ch0103/06">
+  var a = Number(prompt('确诊数'))
+  var b = Number(prompt('死亡数'))
+  var c = ((b / a) * 100).toFixed(3)
+  console.log(c + "%")
+</script>
+
+<script type="xx" id="ch0103/07">
+  var x = Number(prompt('x'))
+  var a = Number(prompt('a'))
+  var b = Number(prompt('b'))
+  var c = Number(prompt('c'))
+  var d = Number(prompt('d'))
+  var z = a * x * x * x + b * x * x + c * x + d
+  console.log(z.toFixed(7))
+</script>
+
+<script type="xx" id="ch0103/08">
+var a = Number(prompt('F'))
+var c = ((a - 32) * 5 / 9).toFixed(5)
+console.log(c)
+</script>
+
+<script type="xx" id="ch0103/09">
+  var a = Number(prompt('r'))
+  var R = 2 * a             //R为直径
+  console.log(R);
+  var b = (3.14159 * R).toFixed(4)      //周长
+  console.log(b);
+  var c = (3.14159 * a * a).toFixed(4)  //面积
+  console.log(c);
+</script>
+
+<script type="xx" id="ch0103/10">
+  var a = Number(prompt('r1'))
+  var b = Number(prompt('r2'))
+  var c = (1 / ((1 / a) + (1 / b))).toFixed(2)
+  console.log(c)
+</script>
+
+<script type="xx" id="ch0103/11">
+  var a = Number(prompt('a'))
+  var b = Number(prompt('b'))
+  console.log((a % b).toFixed(4))
+</script>
+
+<script type="xx" id="ch0103/12">
+  var a = Number(prompt('r'))
+  var b = 4 / 3 * 3.14 * a * a * a
+  console.log( b.toFixed(2) )
+</script>
+
+<script type="xx" id="ch0103/13">
+  var a = Number(prompt('a'))
+
+  var x = (a % 10)   //个位数
+  var c = ( a - x ) / 10 % 10
+  var v = (a - c * 10 - x) / 100 % 10
+  var b = String(x) + String(c) + String(v)
+  console.log( b )
+</script>
+
+
+<script type="xx" id="ch0103/14">
+  var a = Number(prompt('h'))
+  var r = Number(prompt('r'))
+  var b = (20000 / (3.14159 * r * r)).toFixed(0)
+  console.log(b)
+</script>
+
+<script type="xx" id="ch0103/14">
+  var n = Number(prompt('有多少苹果'))
+var x = Number(prompt('吃掉一个苹果所用时间'))
+var y = Number(prompt('经过多少时间'))
+var a = n - Math.ceil( y / x )
+console.log(a)
+</script>
+
+
+<script type="xx" id="ch0103/16">
+  var Xa = Number(prompt('Xa'))
+  var Ya = Number(prompt('Xb'))
+  var Xb = Number(prompt('Ya'))
+  var Yb = Number(prompt('Yb'))
+  var z = Math.sqrt((Xa - Xb) * (Xa - Xb) + (Ya - Yb) * (Ya - Yb))
+  console.log(z)
+</script>
+
+
+<script type="xx" id="ch0103/17">
+  var x1 = Number(prompt('x1'))
+  var y1 = Number(prompt('y1'))
+  var x2 = Number(prompt('x2'))
+  var y2 = Number(prompt('y2'))
+  var x3 = Number(prompt('x3'))
+  var y3 = Number(prompt('y3'))
+  var a = Math.sqrt(Math.pow((x1 - x2) , 2) + Math.pow((y1 - y2) , 2))
+  var b = Math.sqrt(Math.pow((x1 - x3) , 2) + Math.pow((y1 - y3) , 2))
+  var c = Math.sqrt(Math.pow((x3 - x2) , 2) + Math.pow((y3 - y2) , 2))
+  var p = (a + b + c) / 2
+  var r = Math.sqrt(p * (p - a) * (p - b) * (p - c))
+  console.log( r.toFixed(2))
+</script>
+
+<script type="xx" id="ch0103/18">
+  var a1 = Number(prompt('a1'))
+  var a2 = Number(prompt('a2'))
+  var n = Number(prompt('n'))
+  var a = a2 - a1
+  var c = (n-1) * a + a1
+  console.log(c)
+</script>
+
+<script type="xx" id="ch0103/19">
+  var a = Number(prompt('a'))
+  var b = Number(prompt('b'))
+  console.log(a * b)
+</script>
+
+<script type="xx" id="ch0103/20">
+  var n = Number(prompt('n'))
+  var b = Math.pow(2 , n)
+  console.log(b)
+</script>
+
+
+
+
+<!--````````````````````````````````````````````````````````````````````````````````````````````-->
+
+
+<script type="xx" id="ch0104/01">
+var N = Number(prompt('N'))
+if (N > 0){
+  console.log("positive")
+}else{
+  if (x == 0){
+    console.log("zero")
+  }else{
+    if (x < 0){
+      console.log("negative")
+    }
+  }
+}
+</script>
+
+<script type="xx" id="ch0104/02">
+  var N = Number(prompt('N'))
+  if(N >= 0){
+    console.log(N)
+  }else{
+    console.log(- N)
+  }
+</script>
+
+<script type="xx" id="ch0104/03">
+  var N = Number(prompt('N'))
+  if(N % 2 == 0){
+    console.log("odd")
+  }else{
+    console.log("even")
+  }
+</script>
+
+<script type="xx" id="ch0104/04">
+  var N = prompt('N')
+  var M = N.charCodeAt(0)
+  if(M % 2 > 0){
+    console.log("YES")
+  }else{
+    console.log("NO")
+  }
+</script>
+
+<script type="xx" id="ch0104/05">
+  var a = Number(prompt('a'))
+  var b = Number(prompt('b'))
+  if (a > b){
+    console.log( ">" )
+  }else{
+    if (a == b){
+      console.log("=")
+    }else {
+      if{
+        console.log("<")
+      }else{
+        console.log("错误")
+      }
+    }
+  }
+</script>
+
+<script type="xx" id="ch0104/06">
+  var a = Number(prompt('a'))
+  if (a >= 10 && a <= 99){
+    console.log("1")
+  }else{
+    console.log("0")
+  }
+</script>
+
+<script type="xx" id="ch0104/07">
+  var a = Number(prompt('幸运'))
+  var b = Number(prompt('鼓励'))
+  if (a >= 10 || b >= 20){
+    console.log("1")
+  }else{
+    console.log("0")
+  }
+</script>
+
+<script type="xx" id="ch0104/08">
+  var a = Number(prompt('a'))
+  if (a % 3 == 0 && a % 5 == 0){
+    console.log("YES")
+  }else{
+    console.log("no")
+  }
+</script>
+
+<script type="xx" id="ch0104/09">
+ var a = Number(prompt('a'))
+  if (a % 3 == 0 && a % 5 == 0 && a % 7 == 0){
+    console.log("3" , "5" , "7")
+  }else{
+    if (a % 3 == 0 && a % 5 == 0 && a % 7 != 0){
+      console.log("3" , "5")
+    }else{
+      if (a % 3 == 0 && a % 5 != 0 && a % 7 == 0){
+       console.log("3" , "7")
+      }else{
+        if (a % 3 != 0 && a % 5 == 0 && a % 7 == 0){
+          console.log("5" , "7")
+        }else{
+          if (a % 3 == 0){
+            console.log("3")
+          }else{
+            if (a % 5 == 0){
+              console.log("5")
+            }else{
+              if (a % 7 == 0){
+              console.log("7")
+            }else{
+              if (a % 3 != 0 || a % 5 != 0 || a % 7 != 0){
+                console.log("n")
+              }
+            }
+          }
+        }
+      }
+     }
+    }
+  }
+  var a = Number(prompt('a'))
+if(a % 3 == 0 || a % 5 == 0 || a % 7 == 0){
+      if (a % 3 == 0){
+    console.log(3)
+  }
+  if (a % 5 == 0){
+    console.log(5)
+  }
+  if (a % 7 == 0){
+    console.log(7)
+  }
+}else{
+  console.log("n")
+}
+
+</script>
+
+<script type="xx" id="ch0104/10">
+  var a = Number(prompt('语文'))
+  var b = Number(prompt('数学'))
+  if (a < 60 && b>60 || a > 60 && b < 60 ){
+    console.log(1)
+  }else{
+    console.log(0)
+  }
+</script>
+
+<script type="xx" id="ch0104/11">
+  var a = Number(prompt('周几'))
+  if ( a != 1 && a != 3 && a != 5){
+    console.log("YES")
+  }else{
+    console.log("NO")
+  }
+</script>
+
+<script type="xx" id="ch0104/12">
+  var a = Number(prompt('距离'))
+  var b = a / 1.2
+  var c = (a / 3) + 50
+  if (b < c){
+    console.log("Walk")
+  }else{
+    if (b > c) {
+      console.log("Bike")
+    }else{
+      console.log("All")
+    }
+  }
+</script>
+
+<script type="xx" id="ch0104/13">
+  var n = Number(prompt('N'))
+  var a = - n + 2.5
+  var b = 2 - 1.5 * (n - 3) * (n - 3)
+  var c = n / 2 - 1.5
+  if (n >= 0 && n < 5){
+    console.log(a)
+  }else{
+    if (n >= 5 && n < 10){
+      console.log(b)
+    }else{
+      if (n >= 10 && n < 20){
+        console.log(c)
+      }else{
+        console.log("错误")
+      }
+    }
+  }
+</script>
+
+<script type="xx" id="ch0104/14">
+  var n = prompt('是否加急')
+  var a = Number(prompt('重量'))
+  var b = (Math.ceil((a - 1000) / 500)) * 4      //超重收费
+  if (n == "y"){
+    if (a <= 1000){
+      console.log(13)
+    }else{
+      console.log(13 + b)
+    }
+  }else{
+    if (a <= 1000){
+      console.log(8)
+    }else{
+      console.log(8 + b)
+    }
+  }
+</script>
+
+<script type="xx" id="ch0104/15">
+  var a = prompt('a')
+  var b = prompt('b')
+  var c = prompt('c')
+  if (a > b && a > c){
+    console.log(a)
+  }else{
+    if (b > a && b > c){
+      console.log(b)
+    }else{
+      if (c > a && c > b){
+        console.log(c)
+      }
+    }
+  }
+</script>
+
+<script type="xx" id="ch0104/16">
+ var a = Number(prompt('a'))
+ var b = Number(prompt('b'))
+ var c = Number(prompt('c'))
+  if ( a + b > c && a + c > b && b + c > a){
+    console.log("YES")
+  }else{
+    console.log("NO")
+  }
+</script>
+
+<script type="xx" id="ch0104/17">
+  var a = Number(prompt('a'))
+  if (a % 100 == 0 && a % 400 == 0){
+    console.log("YES")
+  }else{
+    if (a % 4 == 0){
+      console.log("YES")
+    }else{
+      console.log("NO")
+    }
+  }
+</script>
+
+<script type="xx" id="ch0104/18">
+  var x = Number(prompt('x'))
+  var y = Number(prompt('y'))
+  if (x >= -1 && x <= 1 && y <= 1 && y >= -1){
+    console.log("yes")
+  }else{
+    console.log("no")
+  }
+</script>
+
+<script type="xx" id="ch0104/19">
+  var x = Number(prompt('x'))
+  var y = Number(prompt('y'))
+  var n = prompt('运算符')
+  var a = x + y
+  var b = x - y
+  var c = x * y
+  var d = x / y
+  if (n == "+"){
+    console.log( a )
+  }else{
+    if (n == "-"){
+      console.log(b)
+    }else{
+      if (n == "*" ){
+        console.log(c)
+      }else{
+        if (n == "/" ){
+          console.log(d)
+        }else{
+          console.log("错误")
+        }
+      }
+    }
+  }
+</script>
+
+<script type="xx" id="ch0104/20">
+  var a = Number(prompt('a'))
+  var b = Number(prompt('b'))
+  var c = Number(prompt('c'))
+
+</script>
+
+<script type="xx" id="ch0104/21">
+
+  var n = Number(prompt('有多少苹果'))
+  var x = Number(prompt('吃掉一个苹果所用时间'))
+  var y = Number(prompt('经过多少时间'))
+  var a = n - Math.ceil( y / x )
+
+  if (a >= ) {
+    console.log( a )
+  }else{
+    console.log( 0 )
+  }
+</script>
+
+<script xtype="xx" id="ch0105/01">
+
+</script>
