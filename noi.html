@@ -377,7 +377,7 @@ if(a % 3 == 0 || a % 5 == 0 || a % 7 == 0){
 </script>
 
 <script type="xx" id="ch0104/15">
-  var a = prompt('a')
+  /* var a = prompt('a')
   var b = prompt('b')
   var c = prompt('c')
   if (a > b && a > c){
@@ -390,7 +390,18 @@ if(a % 3 == 0 || a % 5 == 0 || a % 7 == 0){
         console.log(c)
       }
     }
+  }  */
+  var a = Number(prompt('a'))
+  var b = Number(prompt('b'))
+  var c = Number(prompt('c'))
+  var max = a
+  if( b > max ){
+    max = b
   }
+  if( c > max ){
+    max = c
+  }
+  console.log(max)
 </script>
 
 <script type="xx" id="ch0104/16">
@@ -445,9 +456,13 @@ if(a % 3 == 0 || a % 5 == 0 || a % 7 == 0){
         console.log(c)
       }else{
         if (n == "/" ){
-          console.log(d)
+          if (y == 0 ){
+            console.log("Divided by zero!")
+          }else{
+            console.log(d)
+          }
         }else{
-          console.log("错误")
+          console.log("Invalid operator!")
         }
       }
     }
@@ -458,6 +473,8 @@ if(a % 3 == 0 || a % 5 == 0 || a % 7 == 0){
   var a = Number(prompt('a'))
   var b = Number(prompt('b'))
   var c = Number(prompt('c'))
+
+
 
 </script>
 
@@ -475,6 +492,598 @@ if(a % 3 == 0 || a % 5 == 0 || a % 7 == 0){
   }
 </script>
 
-<script xtype="xx" id="ch0105/01">
+<script type="xx" id="ch0105/01">
+  var n = Number(prompt('学生人数'))
+  var a = 0
+  var sum = 0
+  while (a < n){
+    a = a + 1
+    var b = Number(prompt('分数'))
+    sum = sum + b
+  }
+  console.log(sum / n)
+</script>
+
+<script type="xx" id="ch0105/02">
+  var a = 0
+  var c = 0
+  while (a < 12){
+    a = a + 1
+    var b = Number(prompt('结余'))
+    c = c + b
+  }
+  console.log("$" + (c / 12).toFixed(2) )
+</script>
+
+<script type="xx" id="ch0105/03">
+  //输入有两行，第一行包含一个整数n（n小于100），代表样本容量；第二行包含n个绝对值不超过1000的浮点数，代表各个样本数据。
+  var n = Number(prompt('n'))
+  var a = 0
+  var b = 0
+  var c = 0
+  while (a < n){
+    a = a + 1
+    c = c + 1
+    var q = Number(prompt('样本数据' + c))
+   b = b + q
+  }
+  console.log((b / n).toFixed(4))
+</script>
+
+<script type="xx" id="ch0105/04">
+  //读入n（1 <= n <= 10000）个整数，求它们的和与均值。
+  var n = Number(prompt('n'))
+  var a = 0
+  var b = 0
+  var c = 0
+  while (a < n){
+    a = a + 1
+    c = c + 1
+    var q = Number(prompt('值' + c))
+   b = b + q
+  }
+  var average = (b / n).toFixed(4)
+  console.log ( String( b ) , String( average ))
+</script>
+
+<script type="xx" id="ch0105/05">
+/*输入两行，第一行为整数n（1 <= n < 100），
+表示参加这次考试的人数.第二行是这n个学生的成绩，
+相邻两个数之间用单个空格隔开。所有成绩均为0到100之间的整数。
+输出一个整数，即最高的成绩。
+*/
+var n = Number(prompt('人数'))
+var a = 0
+var c = 0
+var b = 0
+do{
+  a = a + 1
+  c = c + 1
+  var q = Number(prompt('分数' + c))
+  if ( q > b){
+    b = q
+  }
+}while(a < n)
+console.log( b )
+</script>
+
+<script type="xx" id="ch0105/06">
+  // 给定一个长度为n的非负整数序列，请计算序列的最大跨度值（最大跨度值 = 最大值减去最小值）。
+  //第一行为序列的个数n（1 <= n <= 1000)，之后给予n个不超过1000的非负整数，整数之间以一个空格分隔。
+  //输出一行，表示序列的最大跨度值
+  var n = Number(prompt('序列个数'))
+  var a = 0
+  var b = 0
+  var max = 0
+  var min = 0
+  while ( a < n ){
+    n = n + 1
+    b = b + 1
+    var q = Number(prompt('整数' + b))
+    if (q > max ) {
+      max = q
+    }
+    if (q < min){
+      min = q
+    }
+  }
+  console.log( max - mix )
+</script>
+
+<script type="xx" id="ch0105/07">
+  //输入n＋1行，第1行是A国参与决赛项目的天数n，其后n行，每一行是该国某一天获得的金、银、铜牌数目
+  //输出1行，包括4个整数，为A国所获得的金、银、铜牌总数及总奖牌数，以一个空格分开
+  var n = Number(prompt('参与天数'))
+  var a = 0
+  var b = 0
+  var z = 0
+  var x = 0
+  var c = 0
+  var zs = 0
+  while ( a < n ){
+    a = a + 1
+    b = b + 1
+    var j = Number(prompt('第' + b + "天" + "金牌"))
+    var y = Number(prompt('第' + b + "天" + "银牌"))
+    var t = Number(prompt('第' + b + "天" + "铜牌"))
+     z = z + j
+     x = x + y
+     c = c + t
+     zs = z + x + c
+  }
+  console.log( z , x , c , zs)
+</script>
+
+<script type="xx" id="ch0105/08">
+/*在欧几里德几何中，n边形的内角和是(n-2)*180°。
+已知其中(n-1)个内角的度数，就能计算出剩下的一个未知内角的度数。请编写一个程序，来解决这个问题。
+第1行只有一个整数n(2第2行有(n-1)个正整数，是每个已知内角的度数。相邻两个整数之间用单个空格隔开。
+一个正整数，为未知内角的度数 */
+var n = Number(prompt('几边形'))
+var a = 0
+var b = 0
+var z = 0
+while ( a < (n - 1)){
+  a = a + 1
+  b = b + 1
+  var j = Number(prompt('第' + b + "个角"))
+  var z = z + j
+}
+var x = (n - 2) * 180 - z
+console.log( x )
+</script>
+
+<script type="xx" id="ch0105/09">
+  //两个数 m 和 n，其中 0 <= m <= n <= 300 。
+  //输出一行，包含一个整数，表示m 到 n（包括m 和 n ）之间的所有奇数的和
+
+  var m = Number(prompt('m'))
+  var n = Number(prompt('n'))
+  var z = 0
+  do{
+    if (m % 2 != 0 && m != 0){
+      var z = z + m
+    }
+    m = m + 1
+  }while(m <= n)
+  console.log( z )
+</script>
+
+<script type="xx" id="ch0105/10">
+  // 将正整数 m 和 n 之间（包括 m 和 n）能被 17 整除的数累加。其中，0 < m < n < 1000。
+  var m = Number(prompt('m'))
+  var n = Number(prompt('n'))
+  var z = 0
+  do{
+    if (m % 17 == 0){
+      var z = z + m
+    }
+    m = m + 1
+  }while(m <= n)
+  console.log( z )
+</script>
+
+<script type="xx" id="ch0105/11">
+  var n = Number(prompt('几个数'))
+  var a = 0
+  var b = 0
+  var c = 0
+  var d = 0
+  var e = 0
+  while (a < n){
+    a = a + 1
+    b = b + 1
+    var z = Number(prompt('第' + b + "个数"))
+    if (z == 1){
+      c = c + 1
+    }
+    if (z == 5){
+      d = d + 1
+    }
+    if (z == 10){
+      e = e + 1
+    }
+  }
+  console.log( c , d , e  )
+</script>
+
+<script type="xx" id="ch0105/12">
+  // 输出一个整数序列中与指定数字相同的数的个数。
+var n = Number(prompt('几个数'))
+var m = Number(prompt('指定数字'))
+var a = 0
+var b = 0
+var c = 0
+var d = 0
+while ( a < n ){
+  a = a + 1
+  b = b + 1
+  var z = Number(prompt('第' + b + "个整数"))
+  if (m == z){
+    d = d + 1
+  }
+}
+console.log ( d )
+</script>
+
+<script type="xx" id="ch0105/13">
+  //给出一个整数a和一个正整数n，求乘方an。
+  var a = Number(prompt('a'))
+  var n = Number(prompt('n'))
+  var b = Math.pow(a , n)
+  console.log( b )
+</script>
+
+<script type="xx" id="ch0105/14">
+//我国现有x亿人口，按照每年0.1%的增长速度，n年后将有多少人？
+var a = Number(prompt('现有人口'))
+var n = Number(prompt('多少年后'))
+var b = 0
+
+while (b < n){
+  b = b + 1
+  a = a + a * 0.001
+}
+console.log( a.toFixed(4) )
+</script>
+
+<script type="xx" id="ch0105/15">
+  var R = Number(prompt('年利率'))
+  var M = Number(prompt('现有多少钱'))
+  var Y = Number(prompt('投资多少年'))
+  var b = 0
+while (b < Y){
+  b = b + 1
+  M = M + M * (R / 100 )
+}
+console.log( Math.trunc(M) )
+</script>
+
+<script type="xx" id="ch0105/16">
+  debugger;
+var N = Number(prompt('年薪'))
+var K = Number(prompt('房价增长百分比'))
+var housing = 200   //房价
+var fund = 0          //存款
+var buyed = false
+for (var count = 1; count <= 20 ; count++) {
+  fund += N
+if (fund >= housing) {
+  console.log(count)
+  buyed = true
+  break
+}
+  housing = housing * (1 + K / 100)
+}
+if( ! buyed){
+    console.log( "Impossible" )
+}
+</script>
+
+<script type="xx" id="ch0105/17">
+var k = Number(prompt('k'))
+var a = 1
+var b = 1
+var c = 2
+for ( var count = 0 ; count < k - 2 ; count++ ){
+c = a + b
+a = b
+b = c
+}
+console.log( c )
+</script>
+
+<script type="xx" id="ch0105/18">
+var n = Number(prompt('n'))
+var j = Number(prompt('鸡尾酒总病例数'))
+var k = Number(prompt('鸡尾酒疗效有效的病例数'))
+var a = 0
+var x = k /j
+for ( var count = 1 ; count < n ; count++ ){
+  a = a + 1
+  var z = Number(prompt('改进总病例数第' + a + '对照组'))
+  var c = Number(prompt('改进疗效有效的病例数第' + a + '对照组'))
+  var y = c / z
+  if ( (y - x) * 100 > 5 ){
+    console.log ( 'better' )
+  }else{
+    if ( (x - y) * 100 > 5 ){
+      console.log ( 'worse' )
+    }else{
+      console.log ( 'same' )
+    }
+  }
+}
+</script>
+
+<script type="xx" id="ch0105/19">
+  var n = Number(prompt('屋顶数'))
+  var tally = 0
+  var 行驶总时间 = 0
+  var 上船总时间 = 0
+  var 下船总时间 = 0
+  for ( var count = 0 ; count < n ; count++){
+    tally++
+    var x = Number(prompt('屋顶' + tally + 'x轴'))
+    var y = Number(prompt('屋顶' + tally + 'y轴'))
+    var people = Number(prompt('屋顶' + tally + '人数'))
+    var distance = Math.sqrt(x * x + y * y)
+    var 行驶时间 = Math.ceil(2 * distance / 50)
+    var 上船时间 = people * 1
+    var 下船时间 = Math.ceil(people * 0.5)
+    行驶总时间 = 行驶总时间 + 行驶时间
+    上船总时间 = 上船总时间 + 上船时间
+    下船总时间 = 下船总时间 + 下船时间
+  }
+  console.log ( 行驶总时间 + 上船总时间 + 下船总时间)
+</script>
+
+<script type="xx" id="ch0105/20">
+var h = Number(prompt('初始高度'))
+var sun = h      //总距离
+for ( var count = 0 ; count < 10 ;count++ ){
+  h = h / 2      //每次弹跳的高度
+  sun = sun + h * 2
+}
+console.log ( sun )
+console.log ( h )
+</script>
+
+<script type="xx" id="ch0105/21">
+var n = Number(prompt('N'))
+var res
+  while ( n != 1 ){
+  if ( n % 2 == 0){
+    res = n
+    n = n / 2
+    console.log('' + res + '/2=' + n)
+  }else if ( n % 2 == 1){
+    res = n
+    n = n * 3 + 1
+    console.log( '' + res + '*3+1=' + n )
+  }
+}
+    console.log ( 'End' )
 
 </script>
+
+<script type="xx" id="ch0105/22">
+  debugger;
+  var tally = 0
+  var accumulate = 0         //存款
+  var surplus = 0     //每月剩余
+
+  for( var count = 1 ; count <= 12 ; count++ ){
+    tally++
+    var budget = Number(prompt( tally + '月预算' ))
+    surplus = surplus + 300 - budget                //每月剩余的
+    if ( surplus < 0 ){
+      console.log ( - count)
+      break;
+    }else{
+      if ( surplus >= 100 ){
+        accumulate =accumulate + (surplus - surplus % 100 )       //存款
+        surplus = surplus % 100
+    }
+  }
+}
+if( count > 12 ){
+  console.log(accumulate = accumulate * 0.2 + accumulate + surplus )
+  }
+</script>
+
+<script type="xx" id="ch0105/23">
+  var m = Number( prompt('药品总量') )
+  var n = Number( prompt('取药人数') )
+  var x = 0
+  var tally = 0
+  for ( var count = 0; count < n ; count++ ){
+    tally++
+    var 病人取药数量 = Number( prompt('病人' + tally + '取药数量') )
+    if (m < 病人取药数量){
+      x = x + 1
+    }else if (m > 病人取药数量) {
+       m = m - 病人取药数量
+     }
+  }
+  console.log ( x )
+</script>
+
+<script type="xx" id="ch0105/24">
+  var n = Number( prompt('检测次数'))
+  var time = 0
+  var max = 0
+  for( var count = 0 ; count < n ; count++){
+    var shrink = Number( prompt('收缩压' ))
+    var diastole = Number( prompt( '舒张压' ))
+    if (shrink < 140 && shrink > 90 && diastole <= 90 && diastole >= 60 ){
+      time = time + 1
+      if ( time > max){
+        max = time
+      }
+    }else{
+      time = 0
+    }
+  }
+
+console.log( time )
+</script>
+
+<script type="xx" id="ch0105/25">
+for ( var count = 100 ;count < 342 ; count++ ){
+  count % 7
+}
+
+</script>
+
+<script type="xx" id="ch0105/26">
+  var n = Number(prompt('几个数'))
+  var x = 0
+  for (var count = 0 ; count < n ; count++){
+    var integer = Number(prompt('整数'))
+    var g = integer % 10
+    var s = ( integer % 100 - integer % 10 ) / 10
+    var b = ( integer % 1000 - integer % 100 ) / 100
+    var q = ( integer - integer % 1000 ) / 1000
+    if ( g - q - b - s > 0 ){
+      x = x + 1
+    }
+  }
+  console.log ( x )
+</script>
+
+<script type="xx" id="ch0105/27">
+  var k = Number( prompt ('k') )
+  var s = 0
+  for ( var n = 1 ; s <= k ; n++ ){
+    s = s + 1 / n
+  }
+  console.log( n - 1)
+</script>
+
+<script type="xx" id="ch0105/28">
+
+  var n = Number(prompt('数字'))
+  var x = 0  // 数字位数
+  for ( var count = 10 ; n / count > 1 ; count = count * 10){
+    x = x + 1
+  }
+  for ( var tally = 0 ; tally < x + 1 ; tally++){
+    var g =  n % 10
+    n = ( n - g ) / 10
+    console.log(g)
+  }
+
+  /*
+  while ( n > 0){
+    var d  = n % 10
+    console.log(d)
+    n = (n - d) / 10
+  }
+  */
+</script>
+
+<script type="xx" id="ch0105/29">
+  var n = Number(prompt('数字'))
+  var r = 0
+  var sign = n
+
+  if ( n > 0){
+    sign = 1
+  }else if (n < 0){
+    n = -n
+    sign = -1
+  }
+
+  while ( n > 0){
+    var d  = n % 10
+    console.log(d)
+    n = (n - d) / 10
+    r =r * 10 + d                //每循环一次使个位数*10 相当于有几位数个位数* 多少次10
+  }
+
+  console.log( r * sign )
+</script>
+
+<script type="xx" id="ch0105/30">
+var m = Number(prompt('m'))
+var k = Number(prompt('k'))
+var count = 0
+if ( m % 19 == 0){
+  while ( m > 0){
+    if (m % 10 == 3){
+      var count = count + 1
+    }
+    m = (m - m % 10) / 10
+  }
+}
+if (count == k){
+  console.log (' YES ')
+}else{
+  console.log( ' NO ' )
+}
+</script>
+
+<script type="xx" id="ch0105/31">
+var n = Number(prompt('N'))
+var m = Number(prompt('M'))
+for ( var i = 1; i <= n ; i++){
+
+  for ( var count = 1 ; count <= m ; count++){
+  }
+}
+</script>
+
+<script type="xx" id="ch0105/31">
+  var n = Number(prompt('N'))
+  var s = 0
+  var q = 1
+  var p = 2
+  var c = 0
+  for (var i = 0 ; i < n ; i++) {
+  s = s + q / p
+  c = q + p
+  p = q
+  q = c
+  }
+  console.log( (s).toFixed(4) )
+</script>
+
+<script type="xx" id="ch0105/32">
+  var n = Number(prompt('N'))
+  var a = a % 3
+  var b = 1
+  if ( i >= 3){
+     for ( var i = 0 ; i < (n - a) / 3 ; i++ ){
+
+     }
+  }
+
+</script>
+
+
+
+
+
+<!--
+<script type="xx" id="">
+  function factorial(n){
+    var count = 1
+    for ( var i = 1 ; i <= n ; i++){
+      count = count * i
+    }
+    return count
+  }
+</script>
+
+<script type="xx" id="">
+  function factorial(n){
+    for ( i = 2 ; i < n ;i++){
+      if ( n % i > 0){
+        return true
+      }else if ( n % i == 0){
+        return false
+      }
+    }
+  }
+</script>
+
+<script xtype="xx" id="">
+  function factorial(n)
+  for ( i = 0 ; i < n ;i++){
+    if (i % 7 == 0){
+      return true
+    }
+    while( n > 0 ){
+       var digit = n % 10
+       if (digit == 7){
+        return true
+       }
+      n = (n - digit) / 10
+    }
+  }
+</script>
+<script xtype="xx" id="">
+
+</script>
+-->
