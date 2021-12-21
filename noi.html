@@ -58,7 +58,7 @@ console.log(c)
 
 <script type="xx" id="ch0103/09">
   var a = Number(prompt('r'))
-  var R = 2 * a             //R为直径
+  var R = (2 * a).toFixed(4)             //R为直径
   console.log(R);
   var b = (3.14159 * R).toFixed(4)      //周长
   console.log(b);
@@ -103,7 +103,7 @@ console.log(c)
   console.log(b)
 </script>
 
-<script type="xx" id="ch0103/14">
+<script type="xx" id="ch0103/15">
   var n = Number(prompt('有多少苹果'))
 var x = Number(prompt('吃掉一个苹果所用时间'))
 var y = Number(prompt('经过多少时间'))
@@ -118,7 +118,7 @@ console.log(a)
   var Xb = Number(prompt('Ya'))
   var Yb = Number(prompt('Yb'))
   var z = Math.sqrt((Xa - Xb) * (Xa - Xb) + (Ya - Yb) * (Ya - Yb))
-  console.log(z)
+  console.log((z).toFixed(3))
 </script>
 
 
@@ -191,9 +191,9 @@ if (N > 0){
 <script type="xx" id="ch0104/03">
   var N = Number(prompt('N'))
   if(N % 2 == 0){
-    console.log("odd")
-  }else{
     console.log("even")
+  }else{
+    console.log("odd")
   }
 </script>
 
@@ -216,7 +216,7 @@ if (N > 0){
     if (a == b){
       console.log("=")
     }else {
-      if{
+      if( a < b ) {
         console.log("<")
       }else{
         console.log("错误")
@@ -254,41 +254,8 @@ if (N > 0){
 </script>
 
 <script type="xx" id="ch0104/09">
- var a = Number(prompt('a'))
-  if (a % 3 == 0 && a % 5 == 0 && a % 7 == 0){
-    console.log("3" , "5" , "7")
-  }else{
-    if (a % 3 == 0 && a % 5 == 0 && a % 7 != 0){
-      console.log("3" , "5")
-    }else{
-      if (a % 3 == 0 && a % 5 != 0 && a % 7 == 0){
-       console.log("3" , "7")
-      }else{
-        if (a % 3 != 0 && a % 5 == 0 && a % 7 == 0){
-          console.log("5" , "7")
-        }else{
-          if (a % 3 == 0){
-            console.log("3")
-          }else{
-            if (a % 5 == 0){
-              console.log("5")
-            }else{
-              if (a % 7 == 0){
-              console.log("7")
-            }else{
-              if (a % 3 != 0 || a % 5 != 0 || a % 7 != 0){
-                console.log("n")
-              }
-            }
-          }
-        }
-      }
-     }
-    }
-  }
   var a = Number(prompt('a'))
-if(a % 3 == 0 || a % 5 == 0 || a % 7 == 0){
-      if (a % 3 == 0){
+  if (a % 3 == 0){
     console.log(3)
   }
   if (a % 5 == 0){
@@ -297,10 +264,9 @@ if(a % 3 == 0 || a % 5 == 0 || a % 7 == 0){
   if (a % 7 == 0){
     console.log(7)
   }
-}else{
-  console.log("n")
-}
-
+  if (a % 3 != 0 && a % 5 != 0 && a % 7 != 0){
+    console.log('n')
+  }
 </script>
 
 <script type="xx" id="ch0104/10">
@@ -343,13 +309,13 @@ if(a % 3 == 0 || a % 5 == 0 || a % 7 == 0){
   var b = 2 - 1.5 * (n - 3) * (n - 3)
   var c = n / 2 - 1.5
   if (n >= 0 && n < 5){
-    console.log(a)
+    console.log((a).toFixed(3))
   }else{
     if (n >= 5 && n < 10){
-      console.log(b)
+      console.log((b).toFixed(3))
     }else{
       if (n >= 10 && n < 20){
-        console.log(c)
+        console.log((c).toFixed(3))
       }else{
         console.log("错误")
       }
@@ -358,8 +324,9 @@ if(a % 3 == 0 || a % 5 == 0 || a % 7 == 0){
 </script>
 
 <script type="xx" id="ch0104/14">
-  var n = prompt('是否加急')
+  debugger
   var a = Number(prompt('重量'))
+  var n = prompt('是否加急')
   var b = (Math.ceil((a - 1000) / 500)) * 4      //超重收费
   if (n == "y"){
     if (a <= 1000){
@@ -409,9 +376,9 @@ if(a % 3 == 0 || a % 5 == 0 || a % 7 == 0){
  var b = Number(prompt('b'))
  var c = Number(prompt('c'))
   if ( a + b > c && a + c > b && b + c > a){
-    console.log("YES")
+    console.log("yes")
   }else{
-    console.log("NO")
+    console.log("no")
   }
 </script>
 
@@ -421,9 +388,9 @@ if(a % 3 == 0 || a % 5 == 0 || a % 7 == 0){
     console.log("YES")
   }else{
     if (a % 4 == 0){
-      console.log("YES")
+      console.log("Y")
     }else{
-      console.log("NO")
+      console.log("N")
     }
   }
 </script>
@@ -473,9 +440,22 @@ if(a % 3 == 0 || a % 5 == 0 || a % 7 == 0){
   var a = Number(prompt('a'))
   var b = Number(prompt('b'))
   var c = Number(prompt('c'))
+  var x1 = ((-b + Math.sqrt(b*b - 4*a*c)) / (2*a)).toFixed(5)
+  var x2 = ((-b - Math.sqrt(b*b - 4*a*c)) / (2*a).toFixed(5))
+  var p = ((-b / (2*a))).toFixed(5)
+  var q = ((Math.sqrt(4*a*c-b*b) / (2*a))).toFixed(5)
 
-
-
+  if (b*b == 4*a*c){
+    console.log('x1=' + 'x2=' + x1)
+  } else if (b*b > 4*a*c){
+    console.log('x1=' + x1 + ';' + 'x2=' + x2 )
+  } else {
+    if (a > 0){
+      console.log('x1=' + p + "+" + q + 'i' + ';' + 'x2=' + p + "-" + q + 'i')
+    } else if (a < 0){
+      console.log('x1=' + p + q + 'i' + ';' + 'x2=' + p + "+" + (-q) + 'i')
+    }
+  }
 </script>
 
 <script type="xx" id="ch0104/21">
@@ -484,12 +464,7 @@ if(a % 3 == 0 || a % 5 == 0 || a % 7 == 0){
   var x = Number(prompt('吃掉一个苹果所用时间'))
   var y = Number(prompt('经过多少时间'))
   var a = n - Math.ceil( y / x )
-
-  if (a >= ) {
     console.log( a )
-  }else{
-    console.log( 0 )
-  }
 </script>
 
 <script type="xx" id="ch0105/01">
@@ -890,13 +865,14 @@ if( count > 12 ){
 </script>
 
 <script type="xx" id="ch0105/24">
+  debugger;
   var n = Number( prompt('检测次数'))
   var time = 0
   var max = 0
   for( var count = 0 ; count < n ; count++){
     var shrink = Number( prompt('收缩压' ))
     var diastole = Number( prompt( '舒张压' ))
-    if (shrink < 140 && shrink > 90 && diastole <= 90 && diastole >= 60 ){
+    if (shrink <= 140 && shrink >= 90 && diastole <= 90 && diastole >= 60 ){
       time = time + 1
       if ( time > max){
         max = time
@@ -905,8 +881,7 @@ if( count > 12 ){
       time = 0
     }
   }
-
-console.log( time )
+console.log( max )
 </script>
 
 <script type="xx" id="ch0105/25">
@@ -967,21 +942,17 @@ for ( var count = 100 ;count < 342 ; count++ ){
   var n = Number(prompt('数字'))
   var r = 0
   var sign = n
-
   if ( n > 0){
     sign = 1
   }else if (n < 0){
     n = -n
     sign = -1
   }
-
   while ( n > 0){
     var d  = n % 10
-    console.log(d)
     n = (n - d) / 10
     r =r * 10 + d                //每循环一次使个位数*10 相当于有几位数个位数* 多少次10
   }
-
   console.log( r * sign )
 </script>
 
@@ -998,23 +969,37 @@ if ( m % 19 == 0){
   }
 }
 if (count == k){
-  console.log (' YES ')
+  console.log ('YES')
 }else{
-  console.log( ' NO ' )
+  console.log( 'NO' )
 }
 </script>
 
 <script type="xx" id="ch0105/31">
-var n = Number(prompt('N'))
-var m = Number(prompt('M'))
-for ( var i = 1; i <= n ; i++){
+  var N = Number(prompt('N'))
+  var M = Number(prompt('M'))
+  var status = 1
+  var result = ''
 
-  for ( var count = 1 ; count <= m ; count++){
+// n是每个灯对应的编号
+// m是操作人员的编号
+  for (var n = 2; n <= N; n++){
+    for (var m = 1, status = 1; m <= M; m++){
+      if (n % m == 0) {
+        status = status * (-1)
+      } else {
+        status = status
+      }
+    }
+    if (status == -1){
+      result = result + ',' + n
+    }
   }
-}
+  console.log(1 + result)
+
 </script>
 
-<script type="xx" id="ch0105/31">
+<script type="xx" id="ch0105/32">
   var n = Number(prompt('N'))
   var s = 0
   var q = 1
@@ -1029,7 +1014,7 @@ for ( var i = 1; i <= n ; i++){
   console.log( (s).toFixed(4) )
 </script>
 
-<script type="xx" id="ch0105/32">
+<script type="xx" id="ch0105/33">
   var n = Number(prompt('N'))
   var a = a % 3
   var b = 1
