@@ -1,4 +1,4 @@
-<script xtype="xx" id="narcissistic">
+<script type="xx" id="narcissistic">
   function digitwidth(m){   //函数  判断一个数有多少位
   var width = 0
   do {
@@ -29,7 +29,40 @@
 console.log ( IsNarcissus(n) )
 </script>
 
+<script type="xx" id="narcissistics">
+  function digitwidth(m){   //函数  判断一个数有多少位
+  var width = 0
+  do {
+    width++
+    var 个位 = m % 10
+    m = (m - 个位) / 10
+    }while (m > 0 )
+    return width
+  }
 
+  function IsNarcissus(n){              //函数 判断一个数是否为水仙花数
+    var width = digitwidth(n)    //调用 digitwidth函数 判断n有多少位
+    var m = n
+    var sum = 0
+    var 个位 = 0
+    while (n > 0) {
+      个位 = n % 10
+      sum = sum + Math.pow(个位 , width)
+      n = ( n - 个位 ) / 10
+    }
+    if (sum == m){
+    return true
+    }else{
+    return false
+    }
+  }
+
+  for( var i = 0 ; i <10000 ; i++){
+    if ( IsNarcissus(i) == true ){
+      console.log( i )
+    }
+  }
+</script>
 
 
 
