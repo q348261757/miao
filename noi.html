@@ -1,14 +1,32 @@
 <script xtype="xx" id="narcissistic">
-  function digitwidth(n){   //函数  判断一个数有多少位
+  function digitwidth(m){   //函数  判断一个数有多少位
   var width = 0
   do {
     width++
     var 个位 = m % 10
     m = (m - 个位) / 10
-    }while (n > 0 )
+    }while (m > 0 )
     return width
   }
 
+  function IsNarcissus(n){              //函数 判断一个数是否为水仙花数
+    var width = digitwidth(n)    //调用 digitwidth函数 判断n有多少位
+    var m = n
+    var sum = 0
+    var 个位 = 0
+    while (n > 0) {
+      个位 = n % 10
+      sum = sum + Math.pow(个位 , width)
+      n = ( n - 个位 ) / 10
+    }
+    if (sum == m){
+    return true
+    }else{
+    return false
+    }
+  }
+  var n = Number( prompt('N') )
+console.log ( IsNarcissus(n) )
 </script>
 
 
@@ -557,14 +575,14 @@ var n = Number(prompt('人数'))
 var a = 0
 var c = 0
 var b = 0
-do{
-  a = a + 1
+  while(a < n){
+    a = a + 1
   c = c + 1
   var q = Number(prompt('分数' + c))
   if ( q > b){
     b = q
   }
-}while(a < n)
+}
 console.log( b )
 </script>
 
@@ -831,7 +849,7 @@ for ( var count = 0 ; count < 10 ;count++ ){
   }
 }
 console.log ((sun).toFixed(4))
-console.log ((h).toFixed(8))
+console.log ((h).toFixed(7))
 </script>
 
 <script type="xx" id="ch0105/21">
