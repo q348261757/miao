@@ -1,3 +1,28 @@
+<script xtype="xx" id="narcissistic">
+  function digitwidth(n){   //函数  判断一个数有多少位
+  var width = 0
+  do {
+    width++
+    var 个位 = m % 10
+    m = (m - 个位) / 10
+    }while (n > 0 )
+    return width
+  }
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script type="xx" id="ch0103/01">
   var a = Number(prompt('a'))
   var b = Number(prompt('b'))
@@ -15,7 +40,8 @@
   var a = Number(prompt('a'))
   var b = Number(prompt('b'))
   var c = Number(prompt('c'))
-  console.log((a + b) / c)
+  var x = Math.trunc((a + b) / c)
+  console.log( x )
 </script>
 
 <script type="xx" id="ch0103/04">
@@ -99,8 +125,8 @@ console.log(c)
 <script type="xx" id="ch0103/14">
   var a = Number(prompt('h'))
   var r = Number(prompt('r'))
-  var b = (20000 / (3.14159 * r * r)).toFixed(0)
-  console.log(b)
+  var b =  Math.ceil(20000 / ((3.14159 * r * r) * a))
+  console.log( b )
 </script>
 
 <script type="xx" id="ch0103/15">
@@ -476,7 +502,7 @@ if (N > 0){
     var b = Number(prompt('分数'))
     sum = sum + b
   }
-  console.log(sum / n)
+  console.log( (sum / n),toFixed(2) )
 </script>
 
 <script type="xx" id="ch0105/02">
@@ -517,7 +543,7 @@ if (N > 0){
     var q = Number(prompt('值' + c))
    b = b + q
   }
-  var average = (b / n).toFixed(4)
+  var average = (b / n).toFixed(5)
   console.log ( String( b ) , String( average ))
 </script>
 
@@ -546,13 +572,14 @@ console.log( b )
   // 给定一个长度为n的非负整数序列，请计算序列的最大跨度值（最大跨度值 = 最大值减去最小值）。
   //第一行为序列的个数n（1 <= n <= 1000)，之后给予n个不超过1000的非负整数，整数之间以一个空格分隔。
   //输出一行，表示序列的最大跨度值
+  debugger
   var n = Number(prompt('序列个数'))
   var a = 0
   var b = 0
   var max = 0
   var min = 0
   while ( a < n ){
-    n = n + 1
+    a = a + 1
     b = b + 1
     var q = Number(prompt('整数' + b))
     if (q > max ) {
@@ -562,7 +589,7 @@ console.log( b )
       min = q
     }
   }
-  console.log( max - mix )
+  console.log( max - min )
 </script>
 
 <script type="xx" id="ch0105/07">
@@ -798,9 +825,12 @@ var h = Number(prompt('初始高度'))
 var sun = h      //总距离
 for ( var count = 0 ; count < 10 ;count++ ){
   h = h / 2      //每次弹跳的高度
-  sun = sun + h * 2
+  sun = sun + h * 2     //此处计算了第十次落地后又弹跳加落下的高度
+  if (count == 9){
+    sun = sun - 2 * h  //减去第十次弹起又落下的高度
+  }
 }
-console.log ( sun )
+console.log ((sun).toFixed(4))
 console.log ( h )
 </script>
 
@@ -885,9 +915,18 @@ console.log( max )
 </script>
 
 <script type="xx" id="ch0105/25">
-for ( var count = 100 ;count < 342 ; count++ ){
-  count % 7
-}
+for ( var i = 100 ;i < 342 ; i++ ){
+    var a7 = i % 7
+    var b7 = (i - a7) / 7 %7
+    var c7 = (i - a7 - b7 * 7) / 7 / 7 % 7
+
+    var a9 = i % 9
+    var b9 = (i - a9) / 9 %9
+    var c9 = (i - a9 - b9 * 9) / 9 / 9 % 9
+    if(a7 == c9 && b7 == b9 && c7 == a9){
+     console.log(i , '' + c7 + b7 + a7 ,'' + c9 + b9 + a9 )
+    }
+  }
 
 </script>
 
@@ -1016,17 +1055,38 @@ if (count == k){
 
 <script type="xx" id="ch0105/33">
   var n = Number(prompt('N'))
-  var a = a % 3
-  var b = 1
-  if ( i >= 3){
-     for ( var i = 0 ; i < (n - a) / 3 ; i++ ){
-
+  var sign = 1
+  var sum = 0
+     for ( var i = 1 ; i <= n ; i++ ){
+      sum =  sum + 1 / i  * sign
+      sign = -sign
      }
-  }
-
+     console.log ( (sum).toFixed(4) )
 </script>
 
+<script type="xx" id="ch0105/34">
+  var n = Number(prompt('N'))
+  var sum = 0
+  var count = 1
+  for (var i = 1 ;i <= n ; i++){
+    count = count * i
+    sum += count
+  }
+  console.log( sum )
+</script>
 
+<script type="xx" id="ch0105/35">
+  var n = Number(prompt('N'))
+  var e = 0
+  var sum = 0
+  var count = 1
+  for (var i = 1 ; i <= n ; i++){
+    count = count * i
+    sum = sum + 1 / count
+  }
+  e = (1 + sum).toFixed(10)
+  console.log(e)
+</script>
 
 
 
