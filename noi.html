@@ -502,7 +502,7 @@ if (N > 0){
     var b = Number(prompt('分数'))
     sum = sum + b
   }
-  console.log( (sum / n),toFixed(2) )
+  console.log( (sum / n).toFixed(2) )
 </script>
 
 <script type="xx" id="ch0105/02">
@@ -642,12 +642,12 @@ console.log( x )
   var m = Number(prompt('m'))
   var n = Number(prompt('n'))
   var z = 0
-  do{
-    if (m % 2 != 0 && m != 0){
+  while(m <= n){
+      if (m % 2 != 0 && m != 0){
       var z = z + m
     }
     m = m + 1
-  }while(m <= n)
+  }
   console.log( z )
 </script>
 
@@ -656,12 +656,12 @@ console.log( x )
   var m = Number(prompt('m'))
   var n = Number(prompt('n'))
   var z = 0
-  do{
+  while(m <= n){
     if (m % 17 == 0){
       var z = z + m
     }
     m = m + 1
-  }while(m <= n)
+  }
   console.log( z )
 </script>
 
@@ -831,7 +831,7 @@ for ( var count = 0 ; count < 10 ;count++ ){
   }
 }
 console.log ((sun).toFixed(4))
-console.log ( h )
+console.log ((h).toFixed(8))
 </script>
 
 <script type="xx" id="ch0105/21">
