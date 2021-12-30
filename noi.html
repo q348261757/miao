@@ -20,9 +20,9 @@
       n = ( n - 个位 ) / 10
     }
     if (sum == m){
-    return true
+    return YES
     }else{
-    return false
+    return NO
     }
   }
   var n = Number( prompt('N') )
@@ -57,7 +57,7 @@ console.log ( IsNarcissus(n) )
     }
   }
 
-  for( var i = 0 ; i <10000 ; i++){
+  for( var i = 10 ; i <10000 ; i++){
     if ( IsNarcissus(i) == true ){
       console.log( i )
     }
