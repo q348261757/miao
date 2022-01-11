@@ -18,85 +18,76 @@ var zxccheng = {                                        //chunk 拆分数组形�
       }
     }
     return result1
-  }
-}
+  },
 
 
-var zxccheng = {                                          //compact 判断值为true还是false
-  compact : function(array){
+  compact: function (array) {                                          //compact 判断值为true还是false
     let result = []
-    for(let i = 0 ; i < array.length ; i++){
-      if(array[i]){
+    for (let i = 0; i < array.length; i++) {
+      if (array[i]) {
         result.push(array[i])
       }
     } return result
-  }
-}
+  },
 
 
-var zxccheng = {                                        //drop 删除在数组开头删除n位 默认删除1位
-  drop: function(array, n = 1){
-    for(let i = 0 ; i < n ; i++){
+  drop: function (array, n = 1) {                                       //drop 删除在数组开头删除n位 默认删除1位
+    for (let i = 0; i < n; i++) {
       array.shift()
     }
     return array
-  }
-}
+  },
 
 
-var zxccheng = {                                      //dropRight 删除在数组开头删除n位 默认删除1位
-  dropRight: function(array, n = 1){
-    for(let i = 0 ; i < n ; i++){
+  dropRight: function (array, n = 1) {                                     //dropRight 删除在数组开头删除n位 默认删除1位
+    for (let i = 0; i < n; i++) {
       array.pop()
     }
     return array
-  }
-}
+  },
 
 
-var zxccheng = {                                        //fill 替换数组的start到end的值 包含start不包含end
-  fill: function(array , value , start = 0 , end = array.length){
-    for(let i = start ; i < end ; i++){
+  fill: function (array, value, start = 0, end = array.length) {                   //fill 替换数组的start到end的值 包含start不包含end
+    for (let i = start; i < end; i++) {
       array[i] = value
     }
     return array
-  }
-}
+  },
 
 
-var zxccheng = {                                      //flatten 减少一级数组嵌套深度
-  flatten: function(array){
+  flatten: function (array) {                    //flatten 减少一级数组嵌套深度
     let result = []
-    for(let i = 0 ; i < array.length ; i++){
-      if( Array.isArray(array[i]) ){
+    for (let i = 0; i < array.length; i++) {
+      if (Array.isArray(array[i])) {
         let len = array[i]
-        for(let j = 0 ; j < len.length ; j++){
-          result.push(  len[j]  )
+        for (let j = 0; j < len.length; j++) {
+          result.push(len[j])
         }
-      }else{
-        result.push( array[i] )
+      } else {
+        result.push(array[i])
       }
     }
     return result
-  }
-}
+  },
 
 
-var zxccheng = {
-  flattenDeep: function(array){
-
-  }
-}
-
-
-var zxccheng = {
-  flattenDeep: function(array , depth = 1){
-    for(let i = 0 ; i < depth ; i++){
-     array = flatten(array)
+  flattenDeep: function (array, depth = 1) {
+    for (let i = 0; i < depth; i++) {
+      array = flatten(array)
     }
     return array
-  }
+  },
+
 }
+
+
+
+
+
+
+
+
+
 
 
 
