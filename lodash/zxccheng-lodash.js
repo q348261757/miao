@@ -1,5 +1,5 @@
-var zxccheng = {                                        //chunk 拆分数组形成新数组
-  chunk: function (array, size) {
+var zxccheng = function(){
+  function chunk(array, size) {                               //chunk 拆分数组形成新数组
     let result1 = []
     let result2 = []
     let count = 1
@@ -13,33 +13,34 @@ var zxccheng = {                                        //chunk 拆分数组形�
       } else {
         count++                                               //计数循环次数 循环size次
       }
-      if (residual != 0 && array.length - 1 - i < residual) {      //将剩余的数字输入到数组中
-        result1.push(array[i])
+      if (residual != 0 && array.length - i - 1 < residual) {      //将剩余的数字输入到数组中
+        result1.push(result2)
+        result2 = []
       }
     }
     return result1
-  },
+  }
 
 
-  compact: function (array) {                                          //compact 判断值为true还是false
+  function compact(array) {                                          //compact 判断值为true还是false
     let result = []
     for (let i = 0; i < array.length; i++) {
       if (array[i]) {
         result.push(array[i])
       }
     } return result
-  },
+  }
 
 
-  drop: function (array, n = 1) {                                       //drop 删除在数组开头删除n位 默认删除1位
+  function drop(array, n = 1) {                                       //drop 删除在数组开头删除n位 默认删除1位
     for (let i = 0; i < n; i++) {
       array.shift()
     }
     return array
-  },
+  }
 
 
-  dropRight: function (array, n = 1) {                                     //dropRight 删除在数组开头删除n位 默认删除1位
+  function dropRight(array, n = 1) {                                     //dropRight 删除在数组开头删除n位 默认删除1位
     for (let i = 0; i < n; i++) {
       array.pop()
     }
@@ -47,15 +48,15 @@ var zxccheng = {                                        //chunk 拆分数组形�
   },
 
 
-  fill: function (array, value, start = 0, end = array.length) {                   //fill 替换数组的start到end的值 包含start不包含end
+  function fill(array, value, start = 0, end = array.length) {                   //fill 替换数组的start到end的值 包含start不包含end
     for (let i = start; i < end; i++) {
       array[i] = value
     }
     return array
-  },
+  }
 
 
-  flatten: function (array) {                    //flatten 减少一级数组嵌套深度
+  function flatten(array) {                    //flatten 减少一级数组嵌套深度
     let result = []
     for (let i = 0; i < array.length; i++) {
       if (Array.isArray(array[i])) {
@@ -68,15 +69,121 @@ var zxccheng = {                                        //chunk 拆分数组形�
       }
     }
     return result
-  },
+  }
 
 
-  flattenDeep: function (array, depth = 1) {
+  function flattenDeep(array, depth = 1) {        //flattenDeep  减少指定数组嵌套深度
     for (let i = 0; i < depth; i++) {
       array = flatten(array)
     }
     return array
-  },
+  }
+
+
+
+  function fromPairs( pairs ){                      //fromPairs  返回一个由键值对pairs构成的对象。
+    var object = {}
+    for(var i = 0 ; i < pairs.length ; i++){
+      object[pairs[i][0]] = pairs[i][1]
+    }
+    return object
+  }
+
+
+  function head(array){                              //head  返回数组第一个值
+   return array[0]
+  }
+
+  function indexOf(array , value , fromIndex = 0){          //indexOf  返回首次 value 在数组array中被找到的 索引值
+  if(fromIndex >= 0){
+    for(var i = fromIndex ; i < array.length ; i++){
+      if(array[i] == value){
+        return i
+      }
+    }
+  }else{
+    for(var j = array.length - 1 ; j >= 0 ; j--){
+      if(array[j] == value){
+        return j
+      }
+    }
+  }
+  return -1
+  }
+
+
+  function initial(array){                      //initial  获取数组array中除了最后一个元素之外的所有元素
+    array.pop()
+    return array
+  }
+
+
+  function join(array , separator = ','){             //join    将 array 中的所有元素转换为由 separator 分隔的字符串。
+    var result = array[0]
+    for(var i = 1 ; i < array.length ; i++){
+      result = result + '~' + array[i]
+    }
+    return result
+  }
+
+
+  function last(array){                                 //last  获取array中的最后一个元素。
+    return array[array.length - 1]
+  }
+
+
+  function lastIndexOf(array , value , fromIndex = array.length-1){             //lastIndexOf   这个方法类似indexOf ，区别是它是从右到左遍历array的元素。
+    for(var i = fromIndex ; i >= 0 ; i--){
+      if(array[i] == value){
+        return i
+      }
+    }
+    return -1
+  }
+
+
+  function nth(array , n = 0){                                    //  nth  获取array数组的第n个元素。如果n为负数，则返回从数组结尾开始的第n个元素。
+    if(n >= 0){
+      return array[n]
+    }else{
+      return array[array.length + n]
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+return {
+  chunk: chunk,
+  compact: compact,
+  drop: drop,
+  dropRight: dropRight,
+  fill: fill,
+  flatten: flatten,
+  flattenDeep: flattenDeep,
+  fromPairs: fromPairs,
+  head: head,
+  indexOf: indexOf,
+  initial: initial,
+  join: join,
+  last: last,
+  lastIndexOf: lastIndexOf,
+  nth: nth,
+}
+
+
+
 
 }
 

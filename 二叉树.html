@@ -1,0 +1,73 @@
+<script>
+function createTreeNode(val){ //创建二叉链表节点
+  return {
+    val: val,
+    left: null,
+    right: null,
+  }
+}
+
+
+
+
+
+
+
+// 将使用顺序数组存放的根结点在rootPos位置的二叉树，转换为二叉链表
+function aryToTree(ary , rootPos = 0){
+  if(ary[rootPos] == null){   //若数字当前值为空 返回空节点
+    return null
+  }
+  var rootNode = createTreeNode(ary[rootPos]) //创建新的节点 值为数组当前的值
+  var leftPos = rootPos * 2 + 1 //左侧分支值的下标
+  var rightPos = rootPos * 2 + 2  //右侧分支值得下标
+  var leftTree = aryToTree(ary, leftPos) //使用递归 左侧分支节点
+  var rightTree = aryToTree(ary, rightPos) //右侧分支节点
+
+  rootNode.left = leftTree  //将左侧节点链接上
+  rootNode.right = rightTree //链接右侧节点
+  return rootNode
+}
+
+
+//将二叉链表还原为数组
+function treeToary(tree , idx = 0 , ary = []){
+ if(tree) {             //判断tree是否为二叉链表
+   ary[idx] = tree.val    //将二叉树的值赋给ary
+ treeToary(tree.left , idx * 2 + 1)     //使用递归 当前节点左侧分支的值
+ treeToary(tree.right , idx * 2 + 2)    //使用递归 当前节点右侧分支的值
+ }
+return ary
+}
+
+function condensedAryToTree(ary){
+  var nodes = []
+  if(ary.length == 0){
+    return null
+  }
+  for(var i = 0 ; i < ary.length ; i++){
+    if(ary[i] == null){           //判断当前是否为空
+      node = null                 //若是空 则当前节点为空节点
+    }else{
+      var node = createTreeNode(ary[i])  //创建一个新的节点
+      nodes.push(node)
+    }
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+//二叉树遍历
+
+
+
+</script>
