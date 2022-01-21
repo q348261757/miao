@@ -1,0 +1,70 @@
+<script>
+
+function Vector(x , y){   //构造函数
+  this.x = x
+  this.y = y
+}
+
+Vector.prototype.plus = function(v){
+  var x = this.x + v.x
+  var y = this.y + v.y
+  return new Vector(x , y)
+}
+
+Vector.prototype.minus = function(v){
+  var x = this.x - v.x
+  var y = this.y - v.y
+  return new Vector(x , y)
+}
+
+
+
+function Complex( real , imag ){
+  this.real = real
+  this.imag = imag
+}
+
+
+Complex.prototype.plus = function(c){
+  var real = this.real + c.real
+  var imag = this.imag - c.imag
+  return new Complex(real , imag)
+}
+
+Complex.prototype.minus = function(c){
+  var real = this.real - c.real
+  var imag = this.imag - c.imag
+  return new Complex(real , imag)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function Myset (){
+  return []
+}
+
+Myset.prototype.has = function(x){
+
+}
+
+
+
+
+
+
+
+</script>

@@ -45,7 +45,7 @@ var zxccheng = function(){
       array.pop()
     }
     return array
-  },
+  }
 
 
   function fill(array, value, start = 0, end = array.length) {                   //fill 替换数组的start到end的值 包含start不包含end

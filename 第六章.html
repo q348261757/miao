@@ -1,0 +1,193 @@
+<script>
+/*
+var rabbit = {}
+rabbit.speak = function(line){
+  console.log("The rabbit says '" + line + "'")
+}
+rabbit.speak("I'm alive")
+*/
+//this
+function speak(line){
+  console.log("The " + this.type + " rabbit says '" + line + "'")  //this指向当前所在对象
+}
+
+var whiteRabbit = {type: "white", speak: speak }  //speak的值为函数speak  函数speak的this为当前所在对象的type
+var fatRabbit = {type: "fat" , speak: speak}
+
+whiteRabbit.speak("Oh my ears and whiskers, " + "how late it's getting!")
+//调用函数speak 此处函数this为当前所在对象whiteRabbit
+fatRabbit.speak("I could sure use a carrot right now")
+
+speak.apply(fatRabbit , ["Burp!"])   //apply 将speak函数中的this指向绑定为fatRabbit对象
+speak.call( {type: "123"} , ["Burp!11111"] )
+//call 将speak函数中的this值绑定为当前输入的值 输入的值必须以对象的形式输入
+
+
+
+//原型
+//getPrototypeOf语法为 Object.getPrototype( )
+var empty = {}
+console.log(empty.toString)
+console.log(empty.toString())  //空对象中存在原型 所有对象均存在一个共有原型
+console.log(Object.getPrototypeOf({}) == Object.prototype)
+//getPrototypeOf 为获取对象原型
+console.log(Object.getPrototypeOf(Object.prototype))
+
+console.log(Object.getPrototypeOf(isNaN) == Function.prototype)   //指向的原型相同 输出为true
+console.log(Object.getPrototypeOf([]) == Array.prototype)    //指向的原型相同 输出为true
+
+var protoRabbit = {
+  speak:function(line){
+    console.log("The " + this.type + " rabbit says '" + line + "'")
+  }
+}
+var killeRabbit = Object.create(protoRabbit)  //Object方法create创建一个新对象  以protoRabbit为原型
+killeRabbit.type = "killer"
+killeRabbit.speak("SKREEEE!")
+
+//构造函数
+//构造函数（constructor）在js中作为生成对象的模板
+//必须使用new命令调用构造函数 生成对象
+//函数体内使用this关键字，代表所要生成的对象实例。
+//构造函数名称一般以大写字母开头，便于区分构造函数和其他函数
+//构造函数创建的对象原型指向了构造函数的prototype属性。
+//使用同一个构造函数创建的对象原型指向同一个
+
+function Rabbit(type){
+  this.type = type
+}
+var killerRabbit = new Rabbit("killer")
+var blackRabbit = new Rabbit("black")
+console.log(blackRabbit.type)
+console.log(killerRabbit.type)
+
+//所有函数均有一个名为prototype的属性
+//prototype的属性作为函数的原型
+
+
+//在构造函数 Rabbit 的原型中添加speak方法
+//Rabbit.prototype 为展示构造函数Rabbit的原型
+Rabbit.prototype.speak = function(line){
+  console.log("The " + this.type + " rabbit says '" + line + "'")
+}
+blackRabbit.speak("Doom...") //blackRabbit 自身为一个type为"black"的对象 不存在speak方法
+//speak存在于对象的原型中  此处blackRabbit继承了原型中的speak方法
+
+
+//当对象中存在和原型中相同的属性 那么对象中该属性会将原型中的相同的属性屏蔽（覆盖）
+
+Rabbit.prototype.teeth = "small"   //为构造函数的原型添加teeth属性 值为"small"
+console.log(killerRabbit.teeth)
+
+killerRabbit.teeth = "long , sharp , and bloody" //为对象killerRabbit添加teeth属性
+
+console.log(killerRabbit.teeth) //killerRabbit中存在teeth属性 值为"long , sharp , and bloody"
+console.log(blackRabbit.teeth)  //blackRabbit中不存在teeth属性 那么会在原型中调用 值为"small"
+//killerRabbit与blackRabbit使用相同的构造函数创建共用一个原型
+console.log(Rabbit.prototype.teeth) //构造函数Rabbit的prototype属性中存在teeth 值为"small"
+
+console.log(Array.prototype.toString == Object.prototype.toString)
+//此处为 false
+//Array原型属性中不存在toString  Array原型不直接指向Object.prototype
+
+console.log([1 , 2].toString())
+//toString() 方法返回一个表示该对象的字符串。
+console.log([1 , 2].join(","))
+//join() 方法将一个数组（或一个类数组对象）的所有元素连接成一个字符串并返回这个字符串。
+
+console.log(Object.prototype.toString.call([1, 2]))
+
+
+
+//原型污染
+Rabbit.prototype.dance = function(){      //为构造函数Rabbit添加dance属性
+  console.log("The " + this.type + " rabbit dances a jig")
+}
+killerRabbit.dance()            //killerRabbit 对象type为kill
+
+var map = {}
+function storePhi(event , phi){
+  map[event] = phi
+}                                             //创建map对象event值为phi
+
+storePhi("pizza" , 0.069)
+storePhi("touched tree" , -0.081)
+
+Object.prototype.nonsense = "hi"
+for (var name in map){                         //使用for/in遍历对象所有phi系数
+ console.log(name)                         // for/in - 循环遍历对象的属性
+}
+  console.log("nonsense" in map)
+  console.log("toString" in map)
+
+//自己创建并赋予对象的所有属性时 可枚举 的。而Object.prototype中的标准属性都不可枚举。
+//不可枚举的属性不会出现在for/in循环中
+Object.defineProperty(Object.prototype, "hiddenNonsense", {enumerable: false, value: "hi"}) //enumerable: false 为定义是否可枚举
+//此句为在Object上穿件一个不可枚举的 hiddenNonsense 属性 值为hi
+//Object.defineProperties() 方法直接在一个对象上定义新的属性或修改现有属性，并返回该对象。 defineProperties可定义多个属性
+//Object.defineProperty() 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性，并返回此对象。defineProperty定义一个属性
+for(var name in map){
+    console.log(name)
+}
+
+  console.log(map.hiddenNonsense)     //hiddenNonsense 为不可枚举属性 不可被for/in循环遍历到
+
+console.log(map.hasOwnProperty("toString"))
+
+//hasOwnProperty() 方法会返回一个布尔值，指示对象自身属性中是否具有指定的属性  true或者false
+//map中不存在hasOwnProperty属性 故返回false
+
+
+
+//无原型对象
+var map = Object.create(null)
+//Object.create()方法创建一个新对象，使用现有的对象来提供新创建的对象的__proto__。
+//此处提供的原型为null 无原型
+map["pizza"] = 0.069
+
+console.log("toString" in map)
+console.log("pizza" in map)
+
+
+//多态
+//多态实际上是不同对象作用于同一操作产生不同的效果。
+//其实就是把做的内容和谁去做分开。
+//js为动态语言
+
+
+
+
+
+//绘制表格
+function rowHeights(rows){              //变量rows是一个二维数组，每个数组元素用来表示一个单元格组成的行
+  return rows.maps(function(row){
+    return row.reduce(function(max, cell){
+      return Math.max(max, cell.minHeight())          //minHeight返回一个数字表示单元格所需最小高度（行高）
+    } , 0)
+  })
+}
+
+function colWidths(rows){
+  return row[0].map(function(_ , i){
+    return rows.reduce(function(max , row){
+      return Math.max(max , row[i].minWidth())
+    }, 0)
+  })
+}
+
+
+
+
+
+//Getter与Stter
+
+
+
+
+
+
+
+
+
+
+</script>
