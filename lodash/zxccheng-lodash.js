@@ -151,6 +151,64 @@ var zxccheng = function(){
   }
 
 
+  function ary(func , n = func.length){             ///ary  创建一个调用func的函数。调用func时最多接受 n个参数，忽略多出的参数。
+    return function(...arge){
+      return func.call(this, ...argr.slice(0, n))
+    }
+  }
+
+
+  function unary(func){
+    return ary(func , 1)
+  }
+
+
+  function negate( predicate ){     //创建一个针对断言函数 func 结果取反的函数。 func 断言函数被调用的时候，this 绑定到创建的函数，并传入对应参数。
+    return function( ...arge){
+      return !predicate(...arge)
+    }
+  }
+
+
+  function spread(func){  //创建一个函数，调用func时，this绑定到创建的新函数，把参数作为数组传入，类似于Function#apply.
+    return function(ary){
+      return func(...ary)
+    }
+  }
+
+
+  function flip(func){                //创建一个函数，调用func时候接收翻转的参数。
+    return function(...args){
+      return func(...args)
+    }
+  }
+
+
+function before(n , func){
+  var c = 0
+  var result
+  return function(...args){
+    if (c < n ){
+      result = func(...args)
+      c++
+    }
+    return result
+  }
+}
+
+
+
+function memoize(func, resolver){
+  var map = new Map()
+  return function(val){
+    if(map.has(val)){
+      return map.get(val)
+    }
+    var result = func(val)
+    map.set(val , result)
+    return result
+  }
+}
 
 
 
@@ -185,7 +243,7 @@ return {
 
 
 
-}
+}()
 
 
 

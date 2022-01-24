@@ -54,11 +54,13 @@ Complex.prototype.minus = function(c){
 
 
 function Myset (){
-  return []
+  this.element = []
 }
 
-Myset.prototype.has = function(x){
-
+Myset.prototype.add = function(val){
+  if(!this.element.includes(val){
+    this.element.push(val)
+  })
 }
 
 
@@ -67,4 +69,21 @@ Myset.prototype.has = function(x){
 
 
 
+function Queue(){
+  this._head = null
+  this._tail = null
+}
+
+//进
+Queue.prototype.enqueue = function{
+  var node = {    //创建节点
+    val,
+    next: null,
+  }
+}
+
+//出
+Queue.prototype.dequeue = {
+
+}
 </script>
