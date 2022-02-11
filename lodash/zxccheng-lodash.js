@@ -72,13 +72,26 @@ var zxccheng = function(){
   }
 
 
-  function flattenDeep(array, depth = 1) {        //flattenDeep  减少指定数组嵌套深度
+  function flattenDepth(array, depth = 1) {        //flattenDeep  减少指定数组嵌套深度
     for (let i = 0; i < depth; i++) {
       array = flatten(array)
     }
     return array
   }
 
+  function flattenDeep(array) {                 //铺平数组
+    let result = []
+    for(var i = 0 ; i < array.length ; i++){
+      let item = array[i];
+      if (Array.isArray(array[i])){                       //判断当前值是否为数组
+        item = flattenDeep(item)           //若是数组去除嵌套 后将返回的数组赋给item
+        result.push(...item)              //将返回的新数组展开添加到新数组中         此时item为没有嵌套的新数组
+      }else{
+        result.push(item)                   //若不是数组将当前值添加到新数组中
+      }
+    }
+    return result
+ }
 
 
   function fromPairs( pairs ){                      //fromPairs  返回一个由键值对pairs构成的对象。
@@ -104,7 +117,7 @@ var zxccheng = function(){
   }else{
     for(var j = array.length - 1 ; j >= 0 ; j--){
       if(array[j] == value){
-        return j
+        return array.length - j
       }
     }
   }
@@ -119,9 +132,9 @@ var zxccheng = function(){
 
 
   function join(array , separator = ','){             //join    将 array 中的所有元素转换为由 separator 分隔的字符串。
-    var result = array[0]
+    var result = String(array[0])                     //String 转换为字符串
     for(var i = 1 ; i < array.length ; i++){
-      result = result + '~' + array[i]
+      result = result + separator + String(array[i])
     }
     return result
   }
@@ -149,6 +162,13 @@ var zxccheng = function(){
       return array[array.length + n]
     }
   }
+
+
+
+
+
+
+
 
 
   function ary(func , n = func.length){             ///ary  创建一个调用func的函数。调用func时最多接受 n个参数，忽略多出的参数。
@@ -223,6 +243,7 @@ function memoize(func, resolver){
 
 
 return {
+  flattenDepth: flattenDepth,
   chunk: chunk,
   compact: compact,
   drop: drop,
