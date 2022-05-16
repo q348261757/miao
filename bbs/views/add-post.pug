@@ -1,0 +1,11 @@
+extend layout.pug
+
+block content
+    h2 发帖
+    <form action="/add-post" method="post">
+      | 标题: <br> <input type="text" name="title"> <br>
+      | 内容: <br> <textarea type="text" name="content" cols="25" rows="6"></textarea> <br>
+      <button>发帖</button>
+    </form>
+
+    //发帖页面

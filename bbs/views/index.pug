@@ -1,0 +1,23 @@
+extend layout.pug
+
+block content
+  a(href="/") 首页
+  |
+  |
+  if loginName
+    span(title=`hi, ${loginName}`) welcome, #{loginName}
+    |
+    |
+    a(href='/add-post') 发帖
+    |
+    |
+    a(href='/logout') 退出登录
+  else
+    a(href='/login') 登录
+    |
+    |
+    a(href='/register') 注册账号
+  //-所有的发帖
+  each post in posts
+    div
+      a(href="/post/" + post.id)= post.title

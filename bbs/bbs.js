@@ -1,11 +1,11 @@
-const express = require("express")
+const express = require("express")  //引入express模块
 const app = express()
 
-const fs = require("fs")
+const fs = require("fs")       //引入fs模块
 
-const cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser')  //引入cookie-parser模块
 
-const uuid = require('uuid').v4
+const uuid = require('uuid').v4        //引入uuid模块
 
 const port = 8090  //端口号
 
@@ -19,43 +19,16 @@ const comments = JSON.parse(fs.readFileSync('./comments.json'))  //读取所有�
 
 
 app.use(express.urlencoded({extended:true})) //解析 URL-encoded 格式的请求体数据
-app.use(cookieParser('aaa'))  //由种子生成cookie
-
+app.use(cookieParser('aaa'))                //由种子生成cookie
+app.use(express.static(__dirname + '/assets'))  //引入jquery
+app.locals.pretty = true  //使模板引擎渲染出的页面源代码整洁
 
 app.get('/', (req, res, next) => {  //请求 获取首页
   res.type('html')
-  if(req.signedCookies.loginName){  //判断是否存在cookie 即是否登录
-    res.write(
-      `
-      <h1>welcome, ${ req.signedCookies.loginName }</h1>
-      <div><a href="/">home</a></div>
-      <div><a href="/logout">logout</a></div>
-      <div><a href="/add-post">add-post</a></div>
-
-      `
-    )
-  }else{
-    res.write(
-      `
-      <h1>hello</h1>
-      <div><a href="/">home</a></div>
-      <div><a href="/login">login</a></div>
-      <div><a href="/register">register</a></div>
-      `
-    )
-  }
-
-  for(var post of posts){
-    res.write(
-      `
-      <div>
-        <h2><a href="/post/${post.id}"> ${post.title} </a></h2>
-        <p>${post.owner}</p>
-      </div>
-      `
-    )
-  }
-
+  res.render(__dirname + '/views/index.pug', {  //引入模板
+    posts: posts,                                //传入主贴信息
+    loginName: req.signedCookies.loginName            //传入cookie  用来检查是否登入
+  })
 })
 
 app.get('/login', (req, res, next) => {   //获取登录页面
@@ -97,23 +70,7 @@ app.get('/logout', (req, res, next) => {     //注销登录
 })
 
 app.get('/register', (req, res, next) => {  //获取注册页面
-  res.type('html')
-
-  res.end(
-    `
-    <form action="/register" method="post">
-      <div>name:<input type="text" name="name"></div>
-
-      <div>email:<input type="email" name="eamil"></div>
-
-      <div>Password:<input type="password" name="passworld"></div>
-
-      <div>AffirmPassword:<input type="password" name="Affirmpassworld"></div>
-
-      <button>Submit</button>
-    </form>
-    `
-  )
+  res.render('register.pug')
 })
 
 app.post('/register', (req, res, next) => {     //获取到注册页面发送的POST请求
@@ -147,16 +104,7 @@ app.post('/register', (req, res, next) => {     //获取到注册页面发送的
 })
 
 app.get('/add-post', (req, res, next) => {      //获取发帖页面
-  res.type('html')
-  res.end(
-    `
-    <form action="/add-post" method="post">
-      Title: <br> <input type="text" name="title"> <br>
-      Content: <br> <textarea type="text" name="content" cols="25" rows="6"></textarea> <br>
-      <button>Post</button>
-    </form>
-    `
-  )
+  res.render('add-post.pug')
 })
 
 app.post('/add-post', (req, res, next) => {   //获取到发帖页面发送的信息

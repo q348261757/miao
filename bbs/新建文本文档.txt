@@ -1,0 +1,6 @@
+bbs为源文件
+users为注册账号
+comments 回帖
+posts 主贴
+
+views内为模板
